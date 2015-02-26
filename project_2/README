@@ -1,0 +1,32 @@
+===== INFORMATION =====
+Program:    virtualmem
+Version:    1.0
+Course:     CSE421
+By:         Alexander Simeonov
+
+===== DESCRIPTION =====
+virtualmem is a simple virtual memory manager. It takes a sequence of page references as an input, as well as the number of available frames. It performs the placement of these pages to the available frames using the page replacement policy specified by the user.
+
+===== COMPILATION =====
+To compile, simply type the following in a terminal:
+make
+Do make sure that the following files are in the current directory when compiling:
+virtualmem.c
+Makefile
+
+====== EXECUTION ======
+The executable file output after make should be called virtualmem, to run it simply type in the following:
+./virtualmem [arguments]
+Arguments:
+-h			: Print a usage summary with all options and exit.
+-f available-frames	: Set the number of available frames.
+			  By default it should be 5.
+-r replacement-policy	: Set the page replacement policy.
+			  It can be either FIFO (First-in-first- out),
+			  SC (second chance/clock),
+			  or LFU (Least-frequently-used).
+			  The default will be FIFO.
+-i input file		: Read the page reference sequence
+			  from a specified file.
+			  If not given, the sequence should be read
+			  from STDIN (ended with ENTER).

@@ -1,0 +1,36 @@
+===== INFORMATION =====
+Program:    myhttpd
+Version:    1.0
+Course:     CSE421
+By:         Alexander Simeonov
+
+===== DESCRIPTION =====
+myhttpd is a simple web server. It binds to a given port on the given address and waits for incoming HTTP/1.0 requests. It serves content from the given directory. That is, any requests for documents is resolved relative to this directory (the document root – by default, the directory where the server is running).
+
+===== COMPILATION =====
+To compile, simply type the following in a terminal:
+make
+Do make sure that the following files are in the current directory when compiling:
+myhttpd.c
+Makefile
+
+====== EXECUTION ======
+The executable file output after make should be called myhttpd, to run it simply type in the following:
+./myhttpd [arguments]
+Arguments:
+-d		: enter debugging mode.
+-h		: print usage summary with all options and exit.
+-l file		: log all requests to the given file.
+-p port		: listen on the given port.
+		  if not provided, myhttpd will listen on port 8080.
+-r dir		: set the root directory for the http server to dir.
+		  if not provided, defaults to the directory where
+		  the server is running.
+-t time		: set the queuing time to time seconds.
+		  if not provided, defaults to 60 seconds.
+-n threadnum	: set number of threads waiting ready in the
+		  execution thread pool to threadnum.
+		  if not provided, defaults to 4 execution threads.
+-s sched	: set the scheduling policy.
+		  it can be either FCFS or SJF.
+		  if not provided, defaults to FCFS.

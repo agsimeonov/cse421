@@ -1,0 +1,35 @@
+===== INFORMATION =====
+Program:    simdisk
+Version:    1.0
+Course:     CSE421
+By:         Alexander Simeonov
+
+===== DESCRIPTION =====
+simdisk is a simple disk scheduling simulator. It takes a sequence of disk cylinder I/O requests as an input, as well as the total number of cylinders on the disk. It performs the scheduling of incoming I/O requests using the disk scheduling policy specified by the user, and measures total number of cylinders travelled by the disk head.
+
+===== COMPILATION =====
+To compile, simply type the following in a terminal:
+make
+Do make sure that the following files are in the current directory when compiling:
+simdisk.c
+Makefile
+
+====== EXECUTION ======
+The executable file output after make should be called simdisk, to run it simply type in the following:
+./simdisk [arguments]
+-h                     : Print a usage summary with all options and exit.
+-n number-of-cylinders : Set the number of cylinders on the disk.
+                         By default it should be 200.
+                         (Be careful that disk cylinder indexes
+                         would be between 0-199 in this case.)
+-d disk-shed-policy    : Set the disk scheduling policy.
+                         It can be either FCFC (First-come-first-served),
+                         SSTF (Shortest-seek-time-first),
+                         C-SCON, or LOOK.
+                         The default will be FCFS.
+                         Assume at the t=t0, the disk head was moving from 0
+                         towards other end of the disk (i.e. cylinder n).
+-i input file          : Read the I/O request sequence
+                         from a specified file.
+                         If not given, the sequence should be read
+                         from STDIN (ended with ENTER).

@@ -1,0 +1,13 @@
+EXTENDED COMMENTS GLOSSARY
+
+#1:
+If the hints argument is not null, it refers to a structure containing input values that may direct the operation by providing options and by limiting the returned information to a specific socket type, address family, and/or protocol.
+
+#2:
+Upon successful return of getaddrinfo(), the location to which res points shall refer to a linked list of addrinfo structures, each of which shall specify a socket address and information for use in creating a socket with which to use that socket address.
+
+#3:
+The freeaddrinfo() function shall free one or more addrinfo structures returned by getaddrinfo(), along with any additional storage associated with those structures. Used to prevent memory leaks.
+
+#4:
+The sockaddr_storage structure stores socket address information. Since the sockaddr_storage structure is sufficiently large to store address information for IPv4, IPv6, or other address families, its use promotes protocol-family and protocol-version independence and simplifies cross-platform development. Using the sockaddr_storage structure in place of the sockaddr structure.
